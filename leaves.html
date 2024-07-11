@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Leaves - Aureole Pharma Pvt Ltd</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Optional: Add your custom styles here */
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md sticky top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="#" class="text-2xl font-bold text-gray-900">Aureole</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#" class="border-b-2 border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium">Home</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Features</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Pricing</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <a href="#" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Sign in</a>
+                    <a href="#" class="bg-indigo-600 text-white px-3 py-2 rounded-md text-sm font-medium">Sign up</a>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div class="lg:flex lg:space-x-8">
+            <!-- Main Content Area -->
+            <div class="lg:w-2/3">
+                <div class="bg-white shadow-sm rounded-lg mb-6 p-6">
+                    <h2 class="text-2xl font-bold mb-4">Manage Leaves</h2>
+                    <!-- Leave Request Form -->
+                    <form class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <label for="leaveType" class="w-32 text-gray-700">Leave Type:</label>
+                            <select id="leaveType" name="leaveType" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                                <option value="vacation">Vacation</option>
+                                <option value="sick">Sick Leave</option>
+                                <option value="personal">Personal Leave</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <label for="startDate" class="w-32 text-gray-700">Start Date:</label>
+                            <input type="date" id="startDate" name="startDate" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <label for="endDate" class="w-32 text-gray-700">End Date:</label>
+                            <input type="date" id="endDate" name="endDate" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <label for="reason" class="w-32 text-gray-700">Reason:</label>
+                            <textarea id="reason" name="reason" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"></textarea>
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700">Request Leave</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Leave History -->
+                <div class="bg-white shadow-sm rounded-lg p-6">
+                    <h2 class="text-xl font-bold mb-4">Leave History</h2>
+                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Start Date</th>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">End Date</th>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                            <th scope="col" class="relative px-6 py-3"><span class="sr-only">Actions</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                        <!-- Replace with dynamic data from backend -->
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap">Vacation</td>
+                                            <td class="px-6 py-4 whitespace-nowrap">2024-07-15</td>
+                                            <td class="px-6 py-4 whitespace-nowrap">2024-07-17</td>
+                                            <td class="px-6 py-4 whitespace-nowrap"><span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Approved</span></td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                <a href="#" class="text-red-600 hover:text-red-900 ml-4">Cancel</a>
+                                            </td>
+                                        </tr>
+                                        <!-- Example row, replace with dynamic data -->
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap">Sick Leave</td>
+                                            <td class="px-6 py-4 whitespace-nowrap">2024-07-08</td>
+                                            <td class="px-6 py-4 whitespace-nowrap">2024-07-09</td>
+                                            <td class="px-6 py-4 whitespace-nowrap"><span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Pending</span></td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                <a href="#" class="text-red-600 hover:text-red-900 ml-4">Cancel</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:w-1/3 mt-8 lg:mt-0">
+                <div class="bg-white shadow-sm rounded-lg p-6">
+                    <h2 class="text-xl font-bold mb-4">Upcoming Holidays</h2>
+                    <ul class="divide-y divide-gray-200">
+                        <li class="py-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium">Independence Day</span>
+                                <span class="text-gray-500 text-xs">2024-08-15</span>
+                            </div>
+                        </li>
+                        <li class="py-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium">Christmas</span>
+                                <span class="text-gray-500 text-xs">2024-12-25</span>
+                            </div>
+                        </li>
+                        <!-- Add more holidays dynamically -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-md mt-16">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Facebook</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 21.88c-4.477 0-8-3.68-8-8.25 0-4.343 3.518-7.875 7.848-7.875 3.645 0 5.346 2.688 5.346 5.906v1.34H13.92v-2.89c0-.802-.048-1.954-1.173-1.954-.807 0-1.167.604-1.167 1.543v2.301H9.002v-2.512c0-2.567 1.54-3.983 3.864-3.983 2.318 0 3.873 1.44 3.873 3.67v2.12h-2.556c-.054.346-.214.807-.42 1.095h2.975l-.384 2.89h-2.591v7.038c2.94-.295 5.34-2.21 5.34-4.507 0-2.644-2.34-4.804-5.335-4.804-1.01 0-1.954.46-2.66 1.25-.34.4-.62.85-.797 1.35h-.004l1.486-.002.004-.002c.07 0 .142.002.214.002 1.58 0 2.946-1.08 3.398-2.518h1.636c-.504 1.595-2.048 2.75-3.87 2.75z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Twitter</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M7.725 19.901c5.67 0 8.789-4.755 8.789-8.85 0-.134 0-.267-.009-.4A6.313 6.313 0 0 0 22 8.356a6.42 6.42 0 0 1-1.825.503 3.169 3.169 0 0 0 1.388-1.75 6.42 6.42 0 0 1-2.03.773 3.17 3.17 0 0 0-5.384 2.885 8.988 8.988 0 0 1-6.528-3.307 3.169 3.169 0 0 0 .98 4.23A3.162 3.162 0 0 1 2.3 10.49v.04c0 1.435.967 2.636 2.295 2.91a3.166 3.166 0 0 1-1.43-.396c-.002.036-.002.072-.002.108 0 2.003 1.42 3.668 3.306 4.04a3.202 3.202 0 0 1-.84.111 3.158 3.158 0 0 1-.612-.062c.414 1.61 1.62 2.78 3.046 2.814a6.333 6.333 0 0 1-3.941 1.366A6.54 6.54 0 0 1 1 19.44a8.94 8.94 0 0 0 4.725 1.36" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">LinkedIn</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M2 3a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3zm5 16V9H6v10h1zm.5-10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM20 12.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 .5.5zM18 15a3 3 0 1 0-6 0 3 3 0 0 0 6 0zm-3-2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
